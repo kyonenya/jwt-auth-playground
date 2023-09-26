@@ -1,8 +1,9 @@
 name = "jwt-auth-playground"
 type = "javascript"
 
-account_id = ""
+account_id = "459dde42cf7692f0210d7aedf12c8043"
 workers_dev = true
 route = ""
 zone_id = ""
 compatibility_date = "2023-09-26"
+main = "index.ts"
