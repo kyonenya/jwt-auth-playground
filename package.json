@@ -11,11 +11,15 @@
   },
   "author": "kyonenya <kyon.musica@gmail.com>",
   "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "hono": "^3.7.2",
+    "jsonwebtoken": "^9.0.2",
+    "jwks-rsa": "^3.0.1"
+  },
   "devDependencies": {
     "prettier": "^1.18.2",
-    "typescript": "^5.2.2"
-  },
-  "dependencies": {
-    "hono": "^3.7.2"
+    "typescript": "^5.2.2",
+    "wrangler": "^3.10.0"
   }
 }
