@@ -22,25 +22,17 @@ export async function validateToken(token: string): Promise<boolean> {
   const decodedHeader = jwt.decode(token)
   const kid = decodedHeader?.header?.kid
 
-  if (!kid) {
-    return false
-  }
+  if (!kid) return false
 
   const jwksUri =
     'https://dev-jchgz1qyixkorthf.jp.auth0.com/.well-known/jwks.json'
   const jwks = await fetchJWKS(jwksUri)
   const publicKey = jwks[kid]
 
-  if (!publicKey) {
-    console.error('Public key not found')
-    return false
-  }
-
-  console.log('Using public key:', publicKey)
+  if (!publicKey) return false
 
   try {
-    const verified = jwt.verify(token, publicKey, { algorithm: 'RS256' })
-    console.log(verified)
+    jwt.verify(token, publicKey, { algorithm: 'RS256' })
     return true
   } catch (err) {
     console.error(err)

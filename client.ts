@@ -8,7 +8,6 @@ async function fetchApiWithAccessToken() {
   const apiResponse = await fetch('http://localhost:8787/auth', {
     headers: { Authorization: `Bearer ${token}` },
   })
-  console.log(apiResponse)
 
   const data = await apiResponse.json()
   console.log(data)
@@ -36,9 +35,3 @@ export async function fetchAuth0Token(): Promise<string> {
 }
 
 fetchApiWithAccessToken()
-
-// // 非同期の即時関数を実行
-// ;(async () => {
-//   const token = await fetchAuth0Token()
-//   console.log(token)
-// })()
